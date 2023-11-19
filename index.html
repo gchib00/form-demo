@@ -22,9 +22,9 @@
       margin-bottom: 8px;
     }
 	
-	select {
-	  cursor: pointer;
-	}
+    select {
+      cursor: pointer;
+    }
 
     input,
     select,
@@ -55,30 +55,6 @@
       text-align: center;
     }
   </style>
-  <title>Order Form</title>
-</head>
-<body>
-
-  <form id="orderForm">
-    <label for="computerModel">Computer Model:</label>
-    <input type="text" id="model" name="computerModel" required minlength="10">
-
-    <label for="component">Computer Component:</label>
-    <select id="component" name="component" required>
-      <option value="motherboard">Motherboard</option>
-      <option value="battery">Battery</option>
-      <option value="processor">Processor</option>
-      <option value="ram">RAM</option>
-    </select>
-
-    <label for="quantity">Quantity:</label>
-    <input type="number" id="quantity" name="quantity" value="1" min="1" required>
-
-    <button type="submit">Order</button>
-
-    <div id="successMessage" style="display: none;"></div>
-  </form>
-
   <script>
     document.getElementById('orderForm').addEventListener('submit', function (event) {
       event.preventDefault();
@@ -102,6 +78,28 @@
       document.getElementById('orderForm').reset();
     });
   </script>
+  <title>Order Form</title>
+</head>
+<body>
 
+  <form id="orderForm">
+    <label for="computerModel">Computer Model:</label>
+    <input type="text" id="model" name="computerModel" required minlength="10">
+
+    <label for="component">Computer Component:</label>
+    <select id="component" name="component" required>
+      <option value="motherboard">Motherboard</option>
+      <option value="battery">Battery</option>
+      <option value="processor">Processor</option>
+      <option value="ram">RAM</option>
+    </select>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" value="1" min="1" required>
+
+    <button type="submit">Order</button>
+
+    <div id="successMessage" style="display: none;"></div>
+  </form>
 </body>
 </html>
