@@ -6,20 +6,20 @@
   <style>
     body {
       display: flex;
-      align-items: center;
       justify-content: center;
       height: 100vh;
+      align-items: center;
       margin: 0;
-    }
-
-    form {
-      text-align: left;
-      width: 300px;
     }
 
     label {
       display: block;
       margin-bottom: 8px;
+    }
+	  
+    form {
+      text-align: left;
+      width: 300px;
     }
 	
     select {
@@ -55,29 +55,6 @@
       text-align: center;
     }
   </style>
-  <script>
-    document.getElementById('orderForm').addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const model = document.getElementById('model');
-      const quantity = document.getElementById('quantity');
-      const successMessage = document.getElementById('successMessage');
-	  
-	  if (quantity.value < 1) {
-        alert('Quantity cannot be lower than 1.');
-        return;
-      }
-
-      if (model.value.length < 10) {
-        alert('Computer model name should be at least 10 characters long.');
-        return;
-      }
-
-      successMessage.textContent = 'Order placed successfully';
-      successMessage.style.display = 'block';
-      document.getElementById('orderForm').reset();
-    });
-  </script>
   <title>Order Form</title>
 </head>
 <body>
@@ -101,5 +78,28 @@
 
     <div id="successMessage" style="display: none;"></div>
   </form>
+  <script>
+	document.getElementById('orderForm').addEventListener('submit', function (event) {
+		event.preventDefault();
+		
+		const model = document.getElementById('model');
+		const quantity = document.getElementById('quantity');
+		const successMessage = document.getElementById('successMessage');
+		  
+		if (quantity.value < 1) {
+			alert('Quantity cannot be lower than 1.');
+			return;
+		}
+		
+		if (model.value.length < 10) {
+			alert('Computer model name should be at least 10 characters long.');
+			return;
+		}
+		
+		successMessage.textContent = 'Order placed successfully';
+		successMessage.style.display = 'block';
+		document.getElementById('orderForm').reset();
+	});
+  </script>
 </body>
 </html>
